@@ -9,10 +9,13 @@ const app = express();
 // Allow cross-origin
 app.use(cors());
 
-app.use('/graphql', graphqlHTTP({
+app.use(
+  '/graphql',
+  graphqlHTTP({
     schema,
     graphiql: true
-  }));
+  })
+);
 
 app.use(express.static('public'));
 
